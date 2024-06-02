@@ -127,6 +127,9 @@ class Polynomial{
     }
 
     public double evaluate(double point){
+    	if (this.coefficients == null && this.exponents == null) {
+    		return 0.0;
+    	}
         double result = 0;
         for(int i = 0; i < coefficients.length; i++){
             result += Math.pow(point, exponents[i]) * coefficients[i];
